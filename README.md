@@ -13,35 +13,35 @@ dev.ryzom.com似乎在2012年后停止了，现在访问wiki.ryzom.dev。
 ### 服务器集群
 包括16个服务进程，web服务（nginx+php-fpm），mysql（或mariadb）数据库。
 
-* **AS** ryzom_admin_service
+* **AS** - ryzom_admin_service - 后台管理web端接口服务
 
-* bms_master backup_service 
+* **bms_master** - backup_service 
 
-* egs entities_game_service 
+* **egs** - entities_game_service - 主逻辑，规则判决
 
-* gpms gpm_service 
+* **gpms** - gpm_service - 地理服务
 
-* ios input_output_service 
+* **ios** - input_output_service - 聊天，文本信息等
 
-* rns ryzom_naming_service 
+* **rns** - ryzom_naming_service - 后端名字服务
 
-* rws ryzom_welcome_service 
+* **rws** - ryzom_welcome_service - 线路服务
 
-* ts tick_service 
+* **ts** - tick_service - 世界时间
 
-* ms mirror_service 
+* **ms** - mirror_service - 类redis
 
-* ais_newbyland ai_service 
+* **ais_newbyland** - ai_service - NPC，ai
 
-* mfs mail_forum_service 
+* **mfs** - mail_forum_service 
 
-* su shard_unifier_service 
+* **su** - shard_unifier_service 
 
-* fes frontend_service 
+* **fes** - frontend_service - 游戏端gateway
 
-* sbs session_browser_server 
+* **sbs** - session_browser_server 
 
-* lgs logger_service
+* **lgs** - logger_service - 日志服务
 
-* ras ryzom_admin_service
+* **ras** - ryzom_admin_service 后台管理控制台
 
