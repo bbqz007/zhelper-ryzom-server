@@ -13,7 +13,7 @@ dev.ryzom.com似乎在2012年后停止了，现在访问wiki.ryzom.dev。
 ### 服务器集群
 包括16个服务进程，web服务（nginx+php-fpm），mysql（或mariadb）数据库。
 
-* AS ryzom_admin_service
+* **AS** ryzom_admin_service
 
 * bms_master backup_service 
 
