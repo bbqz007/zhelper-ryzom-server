@@ -6,7 +6,7 @@ dev.ryzom.com似乎在2012年后停止了，现在访问wiki.ryzom.dev。
 
 代码仓地址：github.com/ryzom/ryzomcore
 
-默认分支：develop （部分代码不完整，在issue可以查到）
+默认分支：develop （部分代码不完整，在[issue](https://github.com/ryzom/ryzomcore/issues/587)可以查到）
 
 选用分支：classic-develop
 
