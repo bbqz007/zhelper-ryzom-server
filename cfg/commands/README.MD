@@ -42,10 +42,18 @@ StartCommands=
 };
 ```
 ```moduleManager.createModule StandardGateway gw```创建gateway模块，变量名gw。
+
 ```gw.transportAdd L5Transport l5```创建L5对象，变量名l5
+
 ```gw.transportCmd l5(open)```执行l5.open()
+
 ```asc_gw.transportAdd L3Client l3c```创建CCallbackClient，变量名l3c
+
 ```asc_gw.transportCmd l3c(connect addr="+ASHost+":"+ASPort+")",```执行l3c.connect()
+
 ```aes_gw.transportAdd L3Server l3s```创建CCallbackServer
+
 ```aes_gw.transportOptions l3s(PeerInvisible)```属性设置
+
 ```aes_gw.transportCmd l3s(open port="+AESPort+")```listen端口
+ 
