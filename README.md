@@ -2,7 +2,7 @@
 ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 
 ### 历史
-[dev.ryzom.com](dev.ryzom.com)似乎在2012年后停止了，现在访问[wiki.ryzom.dev](https://wiki.ryzom.dev)。
+[dev.ryzom.com](https://dev.ryzom.com)似乎在2012年后停止了，现在访问[wiki.ryzom.dev](https://wiki.ryzom.dev)。
 
 代码仓地址：[github.com/ryzom/ryzomcore](https://github.com/ryzom/ryzomcore)
 
@@ -45,3 +45,4 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 
 * **ras** - ryzom_admin_service 后台管理web端接口服务
 
+ 
