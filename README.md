@@ -52,6 +52,6 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
-    - [php解难](deployment/troubleshootings/php)
-* **序列化**
+    - [php解难](deployment/troubleshooting/php)
+* [**序列化**](src/doc/serialization)
     
