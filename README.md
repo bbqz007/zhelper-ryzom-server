@@ -47,6 +47,7 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 
 ### index
 * **架构**
+    - [服务器集群](#服务器集群)
 * **框架**
     - [网络](network/layers)
 * **配置文件**
