@@ -1,4 +1,4 @@
-[DOC LICENSE](https://github.com/bbqz007/zhelper-ryzom-server/LICENSE)
+[DOC LICENSE](https://github.com/bbqz007/zhelper-ryzom-server/blob/master/LICENSE)
 * [**IStream**](#IStream)
 	- [header](https://github.com/ryzom/ryzomcore/blob/ryzomclassic-develop/nel/include/nel/misc/stream.h)
 	- mode: input: false or true, 决定serial的行为，反序列化还是序列化。
