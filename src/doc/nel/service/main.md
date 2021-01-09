@@ -1,4 +1,4 @@
-[\[doc lisence\]](../../../../LISENCE)
+[\[doc lisence\]](../../../../LICENSE)
 [src](https://github.com/ryzom/ryzomcore/blob/ryzomclassic-develop/nel/src/net/service.cpp)
 * preinit
     - init **IModuleManager** ```IModuleManager::getInstance();```
