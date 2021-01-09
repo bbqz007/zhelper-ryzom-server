@@ -1,6 +1,8 @@
 # zhelper-ryzom-server
 ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 
+本文档基于ryzomclassic-develop分支代码，分析，编译，实际运行，从而编写。
+
 ### 历史
 [dev.ryzom.com](https://dev.ryzom.com)似乎在2012年后停止了，现在访问[wiki.ryzom.dev](https://wiki.ryzom.dev)。
 
@@ -50,9 +52,11 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
     - [服务器集群](#服务器集群)
 * **框架**
     - [网络](network/layers)
+    - [服务主循环](blob/master/src/doc/nel/service/main.md)
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
     - [php解难](deployment/troubleshooting/php)
 * [**序列化**](src/doc/serialization)
+* **协议**
     
