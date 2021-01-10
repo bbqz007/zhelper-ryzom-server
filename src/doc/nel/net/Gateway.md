@@ -136,3 +136,89 @@
 		public CModuleGateway,
 		public CModuleSocket
 ```
+## L3Transport
+```c++
+	/** the specialized route for server transport */
+	class CL3ServerRoute : public CGatewayRoute
+	{
+	public:
+		/// The id of the socket in the server
+		TSockId			SockId;
+
+		/// Time stamp of last message received/emitted
+		mutable uint32	LastCommTime;
+```
+```c++
+	/** Gateway transport using layer 3 server */
+	class CGatewayL3ServerTransport : public IGatewayTransport
+	{
+		friend class CL3ServerRoute;
+	public:
+		/// The callback server that receive connection and dispatch message
+		auto_ptr<CCallbackServer>			_CallbackServer;
+```
+```c++
+	class CL3ClientRoute : public CGatewayRoute
+	{
+	public:
+		/// The server address for this route
+		CInetAddress				ServerAddr;
+		/// The Client callback
+		mutable CCallbackClient		CallbackClient;
+```
+```c++
+	/** Gateway transport using layer 3 client */
+	class CGatewayL3ClientTransport : public IGatewayTransport
+	{
+		friend class CL3ClientRoute;
+	public:
+		/// A static mapper to retrieve transport from the CCallbackServer pointer
+		typedef map<CCallbackNetBase*, CGatewayL3ClientTransport*>	TDispatcherIndex;
+		static TDispatcherIndex				_DispatcherIndex;
+
+		/// Storage for active connection
+		typedef map<TSockId, CL3ClientRoute*>	TClientRoutes;
+		TClientRoutes			_Routes;
+
+		/// Indexed storage of active connection (used for stable connId)
+		/// a NULL TSockeId mean a free connection slot.
+		typedef vector<TSockId>		TClientRouteIds;
+		TClientRouteIds			_RouteIds;
+		/// A list of free slot ready for use
+		typedef vector<TClientRouteIds::difference_type>	TFreeRouteIds;
+		TFreeRouteIds			_FreeRoutesIds;
+
+		/// the route to delete outside of the update loop
+		list<CL3ClientRoute*>	_RouteToRemove;
+```
+
+## L5Transport
+```c++
+	/** the specialized route for l5 transport */
+	class CL5Route : public CGatewayRoute
+	{
+	public:
+		/// the service ID of the outbound service
+		TServiceId		ServiceId;
+
+		/// The transport ID at the outbound
+		TL5TransportId	ForeignTransportId;
+```
+```c++
+	/** Gateway transport using layer 5 */
+	class CGatewayL5Transport : public IGatewayTransport
+	{
+		friend class CL5Route;
+	public:
+		/// This transport ID
+		TL5TransportId	_TransportId;
+
+		/// current open status
+		bool			_Open;
+		/// Subnet name
+		string			_SubNetName;
+
+		typedef std::map<TServiceId, CL5Route*>	TRouteMap;
+		/// The table that keep track of all routes
+		TRouteMap	_Routes;
+```
