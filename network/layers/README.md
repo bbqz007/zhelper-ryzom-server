@@ -1,11 +1,17 @@
 ## CSock & CTcpSock & CUdpSock L0
+[\[details\]]()
 
 ## CBufSock <= CNonBlockingBufSock <= CServerBufSock L0.5
 CBufSock: send buffering FIFO 数据发送缓冲队列
+
 CNonBlockingBufSock: NoDelay and receiving buffer
+
+[\[details\]]()
 
 ## CBufClient & CBufServer L1
 CClientReceiveTask, CServerReceiveTask 数据接收线程池。
+
+[\[details\]]()
 
 ## CCallbackClient & CCallbackServer L3
 ```c++
@@ -20,7 +26,7 @@ CMessage msgout( "PONG" );
 msgout.serial( counter );
 server->send( msgout, clientfrom );
 ```
-
+[\[details\]]()
 
 ## CNetManager L4 - manage connection of client or server
 ```c++
@@ -31,7 +37,7 @@ CNetManager::send( "FS", msgout, clientfrom );
 CNetManager::addClient( SVC, "localhost:37000" );
 CNetManager::addCallbackArray( SVC, CallbackArray, sizeof(CallbackArray)/sizeof(CallbackArray[0]) );
 ```
-
+[\[details\]]()
 
 ## CUnifiedNetwork L5 - service adapter depend to namingservice
 ```c++
@@ -43,3 +49,10 @@ L4 L3 you should specify the server of service to a client.
 L4 would handle the (re)connection.
 
 L3 you need to connect to server.
+
+[\[details\]]()
+
+## CGatewayTransport & CGatewayRouter
+use Layer 3
+
+[\[details\]]()
