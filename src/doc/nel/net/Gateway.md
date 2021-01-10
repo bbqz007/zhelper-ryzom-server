@@ -1,4 +1,18 @@
 ## overview
+* module_gateway.cpp
+* module_gateway_transport.cpp
+* module_l5_transport.cpp
+
+进程间或本地间的模块互连（interconnect），发送或分派模块消息（sendModuleMessage，dispatchModuleMessage）。
+
+Transport就是Gateway依赖的传输层实现，可以是L3或L5，也可以是namingpipe。
+
+一个Transport只能是主动端（client）或被动端（server）。
+
+Route代表一个Transport上的连接，在这个连接上的名字。
+
+Gateway必须是一个Module。
+
 ```c++
     /** Interface for gateway.
 	 *	A gateway is the part of the module layer that interconnect
