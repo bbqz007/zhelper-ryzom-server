@@ -1,5 +1,8 @@
-## CBufSock L0
-send buffering FIFO 数据发送缓冲队列
+## CSock & CTcpSock & CUdpSock L0
+
+## CBufSock <= CNonBlockingBufSock <= CServerBufSock L0.5
+CBufSock: send buffering FIFO 数据发送缓冲队列
+CNonBlockingBufSock: NoDelay and receiving buffer
 
 ## CBufClient & CBufServer L1
 CClientReceiveTask, CServerReceiveTask 数据接收线程池。
