@@ -11,6 +11,7 @@
     - dispatchModuleMessage()
     - plugModule()
     - unplugModule()
+    
 基础类
 * CModuleBase
 * CModuleFactory
@@ -20,11 +21,11 @@
 
 管理器
 * CMoudleManager 
-    - 
-    -
-    -
+    - 1
+    - 2
+    - 3
 * CStandardGateway
-    -
+    - 1
 
 Factory 创建本地Module的工厂类。
 
