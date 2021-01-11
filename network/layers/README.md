@@ -1,19 +1,29 @@
-## CSock & CTcpSock & CUdpSock L0
+## Layer0
+* CSock
+* CTcpSock
+* CUdpSock
 [\[details\]]()
 
-## CBufSock <= CNonBlockingBufSock <= CServerBufSock L0.5
+## Layer0.5
+* CBufSock 
+* CNonBlockingBufSock (extended CBufSock)
+* CServerBufSock (extended CNonBlockingBufSock)
 CBufSock: send buffering FIFO 数据发送缓冲队列
 
 CNonBlockingBufSock: NoDelay and receiving buffer
 
 [\[details\]]()
 
-## CBufClient & CBufServer L1
+## Layer1
+* CBufClient
+* CBufServer
 CClientReceiveTask, CServerReceiveTask 数据接收线程池。
 
 [\[details\]]()
 
-## CCallbackClient & CCallbackServer L3
+## Layer3
+* CCallbackClient 
+* CCallbackServer 
 ```c++
 CCallbackClient client;
 client.addCallbackArray( CallbackArray, sizeof(CallbackArray)/sizeof(CallbackArray[0]) );
@@ -28,7 +38,9 @@ server->send( msgout, clientfrom );
 ```
 [\[details\]]()
 
-## CNetManager L4 - manage connection of client or server
+## Layer4
+* CNetManager 
+    - manage connection of client or server
 ```c++
 CNetManager::send( "PS", msgout, from );
 CNetManager::send( "FS", msgout, clientfrom );
@@ -39,10 +51,14 @@ CNetManager::addCallbackArray( SVC, CallbackArray, sizeof(CallbackArray)/sizeof(
 ```
 [\[details\]]()
 
-## CUnifiedNetwork L5 - service adapter depend to namingservice
+## Layer5
+* CUnifiedNetwork 
+    - service adapter depend to namingservice
 ```c++
 CUnifiedNetwork::getInstance()->send("GPMS", msgout);
 ``` 
+
+named services manager.
 
 L4 L3 you should specify the server of service to a client.
 
@@ -52,9 +68,13 @@ L3 you need to connect to server.
 
 [\[details\]]()
 
-## CStandardGateway L6
-**CGatewayTransport & CGatewayRouter**
+## Layer6
+* CStandardGateway
+    - CGatewayTransport
+    - CGatewayRouter
 
-module messages。
+module messages exchange。
+
+plugged module manager.
 
 [\[details\]]()
