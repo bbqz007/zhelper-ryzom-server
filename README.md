@@ -50,8 +50,10 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 ### index
 * **架构**
     - [服务器集群](#服务器集群)
+    - [网络服务分层](network/layers)
 * **框架**
     - [网络](network/layers)
+    - [模块管理](src/doc/nel/net/module.md)
     - [服务主循环](src/doc/nel/service/main.md)
 * **配置文件**
     - [命令](cfg/commands)
