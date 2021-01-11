@@ -2,12 +2,14 @@
 * CSock
 * CTcpSock
 * CUdpSock
+
 [\[details\]]()
 
 ## Layer0.5
 * CBufSock 
 * CNonBlockingBufSock (extended CBufSock)
 * CServerBufSock (extended CNonBlockingBufSock)
+
 CBufSock: send buffering FIFO 数据发送缓冲队列
 
 CNonBlockingBufSock: NoDelay and receiving buffer
@@ -17,6 +19,7 @@ CNonBlockingBufSock: NoDelay and receiving buffer
 ## Layer1
 * CBufClient
 * CBufServer
+
 CClientReceiveTask, CServerReceiveTask 数据接收线程池。
 
 [\[details\]]()
@@ -41,6 +44,7 @@ server->send( msgout, clientfrom );
 ## Layer4
 * CNetManager 
     - manage connection of client or server
+    
 ```c++
 CNetManager::send( "PS", msgout, from );
 CNetManager::send( "FS", msgout, clientfrom );
@@ -54,6 +58,7 @@ CNetManager::addCallbackArray( SVC, CallbackArray, sizeof(CallbackArray)/sizeof(
 ## Layer5
 * CUnifiedNetwork 
     - service adapter depend to namingservice
+    
 ```c++
 CUnifiedNetwork::getInstance()->send("GPMS", msgout);
 ``` 
