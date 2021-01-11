@@ -1,3 +1,18 @@
+## OVERVIEW
+网络服务设计成分层架构，总共分为6层。
+- Layer0是对底层socket服务的跨平台封装。
+- Layer1提供发送缓冲队列，接收缓存，工作线程池服务。
+- Layer2向高层隐藏低层操作L0的接口。
+- Layer3管理Callback
+
+Layer4，Layer5，Layer6，依赖L3，提供不同范围的联网服务。
+
+Layer4提供进程内的名字服务。
+
+Layer5提供基于NS服务的联网名字服务。
+
+Layer6提供进程间模块联网服务。
+
 ## Layer0
 * CSock
 * CTcpSock
