@@ -20,7 +20,7 @@ L1~L6有一个重要接口，update，在主线程循环中分派。L1负责努�
 * CTcpSock
 * CUdpSock
 
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer0.md)
 
 ## Layer0.5
 * CBufSock 
@@ -31,7 +31,7 @@ CBufSock: send buffering FIFO 数据发送缓冲队列
 
 CNonBlockingBufSock: NoDelay and receiving buffer
 
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer0.5.md)
 
 ## Layer1
 * CBufClient
@@ -39,7 +39,7 @@ CNonBlockingBufSock: NoDelay and receiving buffer
 
 CClientReceiveTask, CServerReceiveTask 数据接收线程池。
 
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer1.md)
 
 ## Layer3
 * CCallbackClient 
@@ -56,7 +56,7 @@ CMessage msgout( "PONG" );
 msgout.serial( counter );
 server->send( msgout, clientfrom );
 ```
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer3.md)
 
 ## Layer4
 * CNetManager 
@@ -70,7 +70,7 @@ CNetManager::send( "FS", msgout, clientfrom );
 CNetManager::addClient( SVC, "localhost:37000" );
 CNetManager::addCallbackArray( SVC, CallbackArray, sizeof(CallbackArray)/sizeof(CallbackArray[0]) );
 ```
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer4.md)
 
 ## Layer5
 * CUnifiedNetwork 
@@ -88,7 +88,7 @@ L4 would handle the (re)connection.
 
 L3 you need to connect to server.
 
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Layer5.md)
 
 ## Layer6
 * CStandardGateway
@@ -99,4 +99,4 @@ module messages exchange。
 
 plugged module manager.
 
-[\[details\]]()
+[\[details\]](src/doc/nel/net/Gateway.md)
