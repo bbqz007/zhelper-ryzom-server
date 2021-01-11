@@ -246,3 +246,4 @@ CStandardGateway管理远端ModuleProxy，CModuleManager管理本地IModule。
 		/// The table that keep track of all routes
 		TRouteMap	_Routes;
 ```
+ 
