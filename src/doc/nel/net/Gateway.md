@@ -11,7 +11,17 @@ Transport就是Gateway依赖的传输层实现，可以是L3或L5，也可以是
 
 Route代表一个Transport上的连接，在这个连接上的名字。
 
-Gateway必须是一个Module。
+Gateway必须是一个Module，并且是一个特殊的Module。
+
+CModuleSocket是一个特殊的Module，并且是抽象的（有虚函数没实现）。
+
+CStandardGateway即是一个Gateway，也是一个CModuleSocket。
+
+CStandardGateway管理远端ModuleProxy，CModuleManager管理本地IModule。
+
+[详细参看模块管理]()
+
+
 
 ```c++
     /** Interface for gateway.
