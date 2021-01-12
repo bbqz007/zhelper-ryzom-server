@@ -1,16 +1,24 @@
 ## OVERVIEW
 接口
 * IModule
+    - plugModule()
+    - unplugModule()
+    - onReceiveModuleMessage()
 * IModuleFactory
     - createModule()
 * IMoudleManager
 * IModuleProxy
 * IMoudleGateway
-* IModuleSocket
+    - createTransport()
     - sendModuleMessage()
     - dispatchModuleMessage()
-    - plugModule()
-    - unplugModule()
+    - onReceiveMessage()
+* IModuleSocket
+    - sendModuleMessage()
+    - broadcastModuleMessage()
+    - onModulePlugged()
+    - onModuleUnplugged()
+
     
 基础类
 * CModuleBase
@@ -18,6 +26,7 @@
 * CModuleProxy
 * CMoudleGateway
 * CModuleSocket
+    - \_PluggedModules
 
 管理器
 * CMoudleManager 
