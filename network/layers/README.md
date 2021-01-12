@@ -7,13 +7,21 @@
 
 Layer4，Layer5，Layer6，依赖L3，提供不同范围的联网服务。
 
-[Layer4](#Layer4) 提供进程内的名字服务。
+[Layer4](#Layer4) 提供进程内的名字服务。(旧NS使用，现在不使用)
 
 [Layer5](#Layer5) 提供基于NS服务的联网名字服务。
 
 [Layer6](#Layer6) 提供进程间模块联网服务。
 
 L1~L6有一个重要接口，update，在主线程循环中分派。L1负责努力发送blocking的缓冲队列，L3负责分派消息包。
+
+L5，L6对每一个L3连接设置固定的回调方法，由L3回调L5，L6的回调方法。
+```
+nel/src/net/module_gateway_transport.cpp|229|cbs->setDefaultCallback(cbDispatchMessage);|
+nel/src/net/module_gateway_transport.cpp|677|route->CallbackClient.setDefaultCallback(cbDispatchMessage);|
+nel/src/net/unified_network.cpp|601|_CbServer->setDefaultCallback(uncbMsgProcessing);|
+nel/src/net/unified_network.cpp|861|cbc->setDefaultCallback(uncbMsgProcessing);|
+```
 
 ## Layer0
 * CSock
