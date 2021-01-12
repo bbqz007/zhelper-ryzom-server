@@ -38,7 +38,9 @@
     - \_ModuleSocketsRegistry
     - \_ModuleGatewaysRegistry
 * CStandardGateway
-    - 1
+    - \_ModuleProxies
+    - \_Transports
+    - \_Routes
 
 Factory 创建本地Module的工厂类。
 
@@ -54,4 +56,4 @@ Module 必须plug-in到一个StandardGateway，才能为远端提供module服务
 
 Route 与远端Gateway的一个L3连接
 
-ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息。 
+ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息，远端Gateway向ModuleProxy转发消息直到到达目的地，由Module分派消息。 
