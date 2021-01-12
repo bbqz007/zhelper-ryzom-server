@@ -19,7 +19,7 @@ CStandardGateway即是一个Gateway，也是一个CModuleSocket。
 
 CStandardGateway管理远端ModuleProxy，CModuleManager管理本地IModule。
 
-[详细参看模块管理]()
+[详细参看模块管理](module.md)
 
 
 
