@@ -30,9 +30,13 @@
 
 管理器
 * CMoudleManager 
-    - 1
-    - 2
-    - 3
+    - \_ModuleLibraryRegistry
+    - \_ModuleFactoryRegistry
+    - \_ModuleInstances
+    - \_ModuleIds
+    - \_ModuleProxyIds
+    - \_ModuleSocketsRegistry
+    - \_ModuleGatewaysRegistry
 * CStandardGateway
     - 1
 
@@ -46,5 +50,8 @@ MoudleManager 管理Factory，Gateway，ModuleSocket，本地Module。
 
 StandardGateway 即是Gateway也是ModuleSocket，管理远端ModuleProxy。
 
-Module 必须plug-in到一个StandardGateway，才能为远端提供module服务。
+Module 必须plug-in到一个StandardGateway，才能为远端提供module服务。自动通知联网所有Gateway创建ModuleProxy。
 
+Route 与远端Gateway的一个L3连接
+
+ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息。 
