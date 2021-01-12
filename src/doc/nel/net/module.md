@@ -1,4 +1,7 @@
 ## OVERVIEW
+
+ModuleManager管理本地Module，Gateway等，Gateway提供Layer6联网服务，Module通过plug到Gateway，可以跟Gateway联网的远端Module交换消息，Gateway负责路由转发这些消息。
+
 接口
 * IModule
     - plugModule()
