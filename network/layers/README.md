@@ -96,6 +96,8 @@ L4 would handle the (re)connection.
 
 L3 you need to connect to server.
 
+由命名服务统一分配端口，自动维护与已经注册在命名服务器的其它服务的连接，所有L5管理的L3连接回调L5的回调方法。
+
 [\[details\]](../../src/doc/nel/net/Layer5.md)
 
 ## Layer6
@@ -106,5 +108,7 @@ L3 you need to connect to server.
 module messages exchange。
 
 plugged module manager.
+
+gateway相互间自动联网，为这个联网上的不同进程间的模块提供消息路由服务。
 
 [\[details\]](../../src/doc/nel/net/Gateway.md)
