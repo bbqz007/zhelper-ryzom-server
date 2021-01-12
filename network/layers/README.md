@@ -111,4 +111,6 @@ plugged module manager.
 
 gateway相互间自动联网，为这个联网上的不同进程间的模块提供消息路由服务。
 
+自动向gateway联网广播module的加入(plug)，远端gateway创建proxy，proxy通过gateway转发消息直到目的gateway。
+
 [\[details\]](../../src/doc/nel/net/Gateway.md)
