@@ -1,4 +1,12 @@
 ## overview
+总共有两层网络，L5与L6.
+
+L5依赖NS，服务用名字注册到NS，由NS分配端口，广播端口信息，L5网络服务自动维护所有使用NS的服务间的连接，使用者无须关心远端服务位置信息。
+
+rws,fes,egs,ais,gpms,ios,tick,mirror组成一个服务网络。
+
+L6模块gateway网络，每个服务进程可以有任意个gateway，加入不同的模块网络。典型地每个服务都创建一个aes_gw，连接到AES，这个gateway网络会将modulemessage路由转发到目的模块。
+
 ### listen ports
 ```
 tcp        0      0 0.0.0.0:41292           0.0.0.0:*               LISTEN      13466/./logger_serv 
