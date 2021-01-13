@@ -27,15 +27,15 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 
 * **rns** - ryzom_naming_service - 后端名字服务
 
-* **rws** - ryzom_welcome_service - 线路服务
+* **rws** - ryzom_welcome_service - 线路，角色登陆服务
 
 * **ts** - tick_service - 世界时间
 
-* **ms** - mirror_service - 类redis
+* **ms** - mirror_service - 内存数据库镜像服务
 
 * **ais_newbyland** - ai_service - NPC，ai
 
-* **mfs** - mail_forum_service 
+* **mfs** - mail_forum_service 邮箱，留言
 
 * **su** - shard_unifier_service 
 
