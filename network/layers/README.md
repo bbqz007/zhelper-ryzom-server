@@ -26,6 +26,9 @@ nel/src/net/unified_network.cpp|861|cbc->setDefaultCallback(uncbMsgProcessing);|
 ```
 ![img](https://img2020.cnblogs.com/blog/665551/202101/665551-20210114200704819-1239107480.jpg)
 
+[网络快照](../netstat.md)
+
+
 ## Layer0
 * CSock
 * CTcpSock
