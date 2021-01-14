@@ -56,6 +56,9 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
     - [网络](network/layers)
     - [模块管理](src/doc/nel/net/module.md)
     - [服务主循环](src/doc/nel/service/main.md)
+* [**数据库**](database)
+    - MySQL
+    - Mirror 游戏镜像数据库    
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
