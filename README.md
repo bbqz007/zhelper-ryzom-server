@@ -51,6 +51,7 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 * **架构**
     - [服务器集群](#服务器集群)
     - [网络服务分层](network/layers)
+    - [并发](network/concurrency)
 * **框架**
     - [网络](network/layers)
     - [模块管理](src/doc/nel/net/module.md)
