@@ -22,7 +22,7 @@ nel/src/net/module_gateway_transport.cpp|677|route->CallbackClient.setDefaultCal
 nel/src/net/unified_network.cpp|601|_CbServer->setDefaultCallback(uncbMsgProcessing);|
 nel/src/net/unified_network.cpp|861|cbc->setDefaultCallback(uncbMsgProcessing);|
 ```
-[!img](https://img2020.cnblogs.com/blog/665551/202101/665551-20210114200704819-1239107480.jpg)
+![img](https://img2020.cnblogs.com/blog/665551/202101/665551-20210114200704819-1239107480.jpg)
 
 ## Layer0
 * CSock
