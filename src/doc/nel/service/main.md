@@ -13,8 +13,8 @@
         2. Register all network associations from "Networks" in cfg.
         3. specifict address:port to **NS**
         4. init **UnifiedNetwork** ```CUnifiedNetwork::getInstance()->init (&loc, _RecordingState, _ShortName, ListeningPort, _SId)```
-    - Connect to the **local AES** and send identification
-    - ```initAdmin()```
+    - Connect to the **local AES** and send identification ```initAdmin()```
+    	1. 旧版使用L5，现在使用L6，Gateway组网，在StartCommands时执行。
     - Add **callback** array
     - ```CTransportClass::init();```
         1. add callback array to UnifiedNetwork
