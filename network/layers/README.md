@@ -1,3 +1,5 @@
+[\[doc lisence\]](../../../LICENSE)
+
 ## OVERVIEW
 网络服务设计成分层架构，总共分为6层。
 - [Layer0](#Layer0) 是对底层socket服务的跨平台封装。
