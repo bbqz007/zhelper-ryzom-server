@@ -27,7 +27,8 @@ ModuleManager管理本地Module，Gateway等，Gateway提供Layer6联网服务�
     - broadcastModuleMessage()
     - onModulePlugged()
     - onModuleUnplugged()
-
+* IModuleInterceptable
+    - onProcessModuleMessage()
     
 基础类
 * CModuleBase
@@ -72,8 +73,10 @@ RPC中间层服务。
 
 接口
 * IModuleInterceptable
+    - onProcessModuleMessage
 基础类
 * CInterceptorForwarder
+* CModuleTracker
 
 使用拦截器模式，借助Gateway分派模块消息的服务，提供RPC中间层服务。
 
