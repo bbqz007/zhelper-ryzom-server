@@ -253,3 +253,13 @@ RPC中间层服务。
 ../web/public_php/ring/welcome_service_itf.php
 
 ```
+分别对应的模块服务
+```
+127.0.0.1/AS-0 : Creating module 'as' of class 'AdminService' 
+
+127.0.0.1/SU-0 : Creating module 'ls' of class 'LoginService' 
+127.0.0.1/SU-0 : Creating module 'mfnfwd' of class 'MailForumNotifierFwd' 
+127.0.0.1/SU-0 : Creating module 'rsm' of class 'RingSessionManager' 
+
+127.0.0.1/WS-129 : Creating module 'ws' of class 'WelcomeService' 
+```
