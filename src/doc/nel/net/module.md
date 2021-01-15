@@ -6,6 +6,8 @@ ModuleManager管理本地Module，Gateway等，Gateway提供Layer6联网服务�
 
 同时Gateway提供firewall服务，可以指定Module之间的可见可到达。
 
+另外，Module借助Gateway，提供RPC中间层服务，由工具生成ClientProxy代码跟ServerSkel代码，可以支持跨平台RPC。
+
 接口
 * IModule
     - plugModule()
@@ -64,6 +66,18 @@ Module 必须plug-in到一个StandardGateway，才能为远端提供module服务
 Route 与远端Gateway的一个L3连接
 
 ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息，远端Gateway向ModuleProxy转发消息直到到达目的地，由Module分派消息。 
+
+## RPC
+RPC中间层服务。
+
+接口
+* IModuleInterceptable
+基础类
+* CInterceptorForwarder
+
+使用拦截器模式，借助Gateway分派模块消息的服务，提供RPC中间层服务。
+
+机器生成＜Module＞_itf.h，＜Module＞_itf.cpp，＜Module＞_itf.xml，＜Module＞_itf.php。
 
 ## Snap
 ```
@@ -147,5 +161,92 @@ ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送
 127.0.0.1/AS-0 : Creating module 'aes_client' of class 'AdminExecutorServiceClient' 
 127.0.0.1/AS-0 : Creating module 'as' of class 'AdminService' 
 127.0.0.1/AS-0 : Creating module 'as_gw' of class 'StandardGateway' 
+
+```
+
+## RPC SNAP
+```
+../nelns/welcome_service/welcome_service_itf.cpp
+../nelns/welcome_service/welcome_service_itf.h
+../ryzom/common/src/game_share/character_sync_itf.cpp
+../ryzom/common/src/game_share/character_sync_itf.h
+../ryzom/common/src/game_share/character_sync_itf.xml
+../ryzom/common/src/game_share/r2_modules_itf.cpp
+../ryzom/common/src/game_share/r2_modules_itf.h
+../ryzom/common/src/game_share/r2_modules_itf.xml
+../ryzom/common/src/game_share/r2_share_itf.cpp
+../ryzom/common/src/game_share/r2_share_itf.h
+../ryzom/common/src/game_share/r2_share_itf.xml
+../ryzom/common/src/game_share/ring_session_manager_itf.cpp
+../ryzom/common/src/game_share/ring_session_manager_itf.h
+../ryzom/common/src/game_share/ring_session_manager_itf.php
+../ryzom/common/src/game_share/ring_session_manager_itf.xml
+../ryzom/common/src/game_share/welcome_service_itf.cpp
+../ryzom/common/src/game_share/welcome_service_itf.h
+../ryzom/server/src/admin_modules/admin_modules_itf.cpp
+../ryzom/server/src/admin_modules/admin_modules_itf.h
+../ryzom/server/src/admin_modules/admin_modules_itf.xml
+../ryzom/server/src/entities_game_service/guild_manager/guild_unifier_itf.cpp
+../ryzom/server/src/entities_game_service/guild_manager/guild_unifier_itf.h
+../ryzom/server/src/entities_game_service/guild_manager/guild_unifier_itf.xml
+../ryzom/server/src/general_utilities_service/re_module_itf.cpp
+../ryzom/server/src/general_utilities_service/re_module_itf.h
+../ryzom/server/src/general_utilities_service/re_module_itf.xml
+../ryzom/server/src/general_utilities_service/rr_module_itf.cpp
+../ryzom/server/src/general_utilities_service/rr_module_itf.h
+../ryzom/server/src/general_utilities_service/rr_module_itf.xml
+../ryzom/server/src/patchman_service/module_admin_itf.cpp
+../ryzom/server/src/patchman_service/module_admin_itf.h
+../ryzom/server/src/patchman_service/module_admin_itf.xml
+../ryzom/server/src/patchman_service/re_module_itf.cpp
+../ryzom/server/src/patchman_service/re_module_itf.h
+../ryzom/server/src/patchman_service/re_module_itf.xml
+../ryzom/server/src/patchman_service/rr_module_itf.cpp
+../ryzom/server/src/patchman_service/rr_module_itf.h
+../ryzom/server/src/patchman_service/rr_module_itf.xml
+../ryzom/server/src/patchman_service/spa_module_itf.cpp
+../ryzom/server/src/patchman_service/spa_module_itf.h
+../ryzom/server/src/patchman_service/spa_module_itf.xml
+../ryzom/server/src/patchman_service/spm_module_itf.cpp
+../ryzom/server/src/patchman_service/spm_module_itf.h
+../ryzom/server/src/patchman_service/spm_module_itf.xml
+../ryzom/server/src/patchman_service/spt_module_itf.cpp
+../ryzom/server/src/patchman_service/spt_module_itf.h
+../ryzom/server/src/patchman_service/spt_module_itf.xml
+../ryzom/server/src/server_share/backup_service_itf.cpp
+../ryzom/server/src/server_share/backup_service_itf.h
+../ryzom/server/src/server_share/backup_service_itf.xml
+../ryzom/server/src/server_share/char_name_mapper_itf.cpp
+../ryzom/server/src/server_share/char_name_mapper_itf.h
+../ryzom/server/src/server_share/char_name_mapper_itf.xml
+../ryzom/server/src/server_share/chat_unifier_itf.cpp
+../ryzom/server/src/server_share/chat_unifier_itf.h
+../ryzom/server/src/server_share/chat_unifier_itf.xml
+../ryzom/server/src/server_share/command_executor_itf.cpp
+../ryzom/server/src/server_share/command_executor_itf.h
+../ryzom/server/src/server_share/command_executor_itf.xml
+../ryzom/server/src/server_share/entity_locator_itf.cpp
+../ryzom/server/src/server_share/entity_locator_itf.h
+../ryzom/server/src/server_share/entity_locator_itf.xml
+../ryzom/server/src/server_share/logger_service_itf.cpp
+../ryzom/server/src/server_share/logger_service_itf.h
+../ryzom/server/src/server_share/logger_service_itf.xml
+../ryzom/server/src/server_share/login_service_itf.cpp
+../ryzom/server/src/server_share/login_service_itf.h
+../ryzom/server/src/server_share/login_service_itf.php
+../ryzom/server/src/server_share/login_service_itf.xml
+../ryzom/server/src/server_share/mail_forum_itf.cpp
+../ryzom/server/src/server_share/mail_forum_itf.h
+../ryzom/server/src/server_share/mail_forum_itf.xml
+
+```
+
+## php RPC SNAP
+```
+../web/public_php/admin/nel/admin_modules_itf.php
+../web/public_php/login/login_service_itf.php
+../web/public_php/ring/mail_forum_itf.php
+../web/public_php/ring/ring_session_manager_itf.php
+../web/public_php/ring/welcome_service_itf.php
 
 ```
