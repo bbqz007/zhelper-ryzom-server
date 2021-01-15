@@ -6,7 +6,7 @@ ModuleManager管理本地Module，Gateway等，Gateway提供Layer6联网服务�
 
 同时Gateway提供firewall服务，可以指定Module之间的可见可到达。
 
-另外，Module借助Gateway，提供RPC中间层服务，由工具生成ClientProxy代码跟ServerSkel代码，可以支持跨平台RPC。
+ModuleService，当一个Module支持RPC时，这个模块称作模块服务。Module借助Gateway，提供RPC中间层服务，由工具生成ClientProxy代码跟ServerSkel代码，可以支持跨平台RPC。
 
 接口
 * IModule
@@ -69,7 +69,7 @@ Route 与远端Gateway的一个L3连接
 ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息，远端Gateway向ModuleProxy转发消息直到到达目的地，由Module分派消息。 
 
 ## RPC
-RPC中间层服务。
+RPC中间层服务。 当一个Module支持RPC时，这个模块称作模块服务ModuleService。
 
 接口
 * IModuleInterceptable
@@ -77,10 +77,24 @@ RPC中间层服务。
 基础类
 * CInterceptorForwarder
 * CModuleTracker
+相关代码
+* nel/net/module_builder_parts.h
+* nel/net/module_builder_parts.cpp
 
 使用拦截器模式，借助Gateway分派模块消息的服务，提供RPC中间层服务。
 
 机器生成＜Module＞_itf.h，＜Module＞_itf.cpp，＜Module＞_itf.xml，＜Module＞_itf.php。
+
+ModuleService定义例子：
+```c++
+// welcome service module
+	class CWelcomeServiceMod : 
+		public NLNET::CEmptyModuleCommBehav<
+                    NLNET::CEmptyModuleServiceBehav<
+                        NLNET::CEmptySocketBehav<NLNET::CModuleBase> > >,
+		public WS::CWelcomeServiceSkel,
+		public NLMISC::CManualSingleton<CWelcomeServiceMod>
+```
 
 ## Snap
 ```
