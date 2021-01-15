@@ -69,7 +69,7 @@ Route 与远端Gateway的一个L3连接
 ModuleProxy 远端Module，关联一个Route，通过Route向远端Gateway发送模块消息，远端Gateway向ModuleProxy转发消息直到到达目的地，由Module分派消息。 
 
 ## RPC
-RPC中间层服务。 当一个Module支持RPC时，这个模块称作模块服务ModuleService。
+RPC中间层服务。 当一个Module支持RPC时，这个模块称作模块服务ModuleService，区别于L5层上的进程服务。
 
 接口
 * IModuleInterceptable
