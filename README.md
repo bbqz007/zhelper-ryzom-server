@@ -52,6 +52,7 @@ ryzomcore(open 3d mmorpg game)服务端zhelper版帮助文档。
 Services Layout
 * Domain
     - shard
+    
 整个游戏服务器包括一个或多个域，每个域由一个或多个世界碎片组成，一个世界碎片使用一台物理机器，通过L5组网。一个域只有一个su，组织域内所有世界碎片。
 
 ### index
