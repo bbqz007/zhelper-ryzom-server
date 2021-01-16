@@ -16,6 +16,10 @@
 	- [header](https://github.com/ryzom/ryzomcore/blob/ryzomclassic-develop/ryzom/common/src/game_share/object.h)
 * 自定义对象的反序化序列化函数
 	- 实现 ```void serial(NLMISC::IStream& stream);```
+* CIFile
+	- serialization to packed sheets.
+* COFile
+
 ## IStream
 ## CMemStream
 ```c++
