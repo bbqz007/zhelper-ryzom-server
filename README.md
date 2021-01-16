@@ -66,8 +66,8 @@ Services Layout
     - [服务主循环](src/doc/nel/service/main.md)
 * [**数据库**](database)
     - MySQL
-    - Mirror 游戏数据镜像服务    
-    - [DataSetSheet]
+    - [Mirror]() 游戏数据镜像服务    
+    - [DataSetSheet]()
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
