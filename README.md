@@ -53,7 +53,7 @@ Services Layout
 * Domain
     - shard
     
-整个游戏服务器包括一个或多个域，每个域由一个或多个世界碎片组成，一个世界碎片使用一台物理机器，通过L5组网。一个域只有一个su，组织域内所有世界碎片。
+整个游戏服务器包括一个或多个域，每个域由一个或多个世界碎片组成，一个世界碎片使用一台物理机器，通过L5组网。一个域只有一个su，组织域内所有世界碎片。每个域包含一个php服务端，一个AS。所有域共用一个MySQL数据库，并且由一个WebAdmin端管理所有AS。
 
 ### index
 * **架构**
@@ -66,7 +66,8 @@ Services Layout
     - [服务主循环](src/doc/nel/service/main.md)
 * [**数据库**](database)
     - MySQL
-    - Mirror 游戏镜像数据库    
+    - Mirror 游戏数据镜像服务    
+    - [DataSetSheet]
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
