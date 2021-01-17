@@ -29,3 +29,38 @@ packed_sheets文件相当于一个或多个sheet的view，加载时可能通过�
 * CFormDfn
 * CFormElm
 * CType
+
+sheet表格式定义 
+* .Dfn文件，包含表格式定义，可以包含其它.Dfn，与其说是表，层级文档更加合适，并非单纯的二维表。
+* .Typ文件，类型声明
+```
+<?xml version="1.0"?>
+<DFN Revision="$Revision: 1.9 $" State="modified">
+  <ELEMENT Name="Chances" Type="Dfn" Filename="_success_chances_line.dfn" Array="true"/>
+  <ELEMENT Name="Max Success" Type="Type" Filename="float.typ"/>
+  <ELEMENT Name="Max Success Factor" Type="Type" Filename="int.typ" Default="1.0"/>
+  <ELEMENT Name="Max Partial Success Factor" Type="Type" Filename="int.typ" Default="&quot;Max Success Factor&quot;"/>
+  <ELEMENT Name="Min Partial Success Factor" Type="Type" Filename="int.typ" Default="&quot;Min Success Factor&quot;"/>
+  <ELEMENT Name="Min Success Factor" Type="Type" Filename="int.typ" Default="0.55"/>
+  <ELEMENT Name="Full Success Roll" Type="Type" Filename="int.typ" Default="0"/>
+  <ELEMENT Name="Min Success Roll" Type="Type" Filename="int.typ" Default="90"/>
+  <COMMENTS>Converted from old format</COMMENTS>
+  <LOG>Fri May 17 15:24:10 2002 (corvazier) File converted from old format
+Thu Mar 25 16:23:09 2004 (fleury) Dfn Structure =
+Thu Jun 03 20:40:35 2004 (fleury) Dfn Structure =
+Thu Jun 03 20:40:57 2004 (fleury) Dfn Structure =
+Tue Sep 07 18:53:34 2004 (fleury) Dfn Structure = </LOG>
+</DFN>
+```
+```
+type = class CStaticSuccessTable {
+  public:
+    std::vector<CSuccessXpLine> _SuccessXpTable;
+    float _MaxSuccessFactor;
+    float _MaxPartialSuccessFactor;
+    float _MinPartialSuccessFactor;
+    uint8 _FullSuccessRoll;
+    uint8 _MinSuccessRoll;
+```
+上面分别是sheet表设计与运行的代码类。	
+
