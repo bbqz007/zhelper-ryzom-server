@@ -29,7 +29,7 @@ void loadForm2(const std::vector<std::string> &sheetFilters, const std::string &
   - PACKED_SHEET_VERSION_COMPATIBLE : uint32
   - dependBlockSize : uint32
   - default
-    - dictionnary : vector<std::string> ; XML \<FORM> filenames
+    - dictionnary : vector<std::string> ; XML \<FORM> \<DFN> \<TYP> filenames
     - depSize : uint32
     - : <sheetId, vector<uint32> > [depSize]
   - nbEntries : uint32
