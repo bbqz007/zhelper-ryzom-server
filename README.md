@@ -68,6 +68,7 @@ Services Layout
     - MySQL
     - [Mirror]() 游戏数据镜像服务    
     - [DataSetSheet]()
+    - [PackedSheet]()
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
