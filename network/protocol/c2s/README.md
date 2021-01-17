@@ -12,3 +12,42 @@ Frontend不能将Impulsion消息直接发送到任何游戏服务，必须通过
 
 任何游戏服务依赖Frontend的cbImpulsionXXX协议服务，将Impulsion消息经由Frontend向RyzomClient发送。
 
+## PROTOCOLS
+* EGS
+  - ANIMALS
+  - BOTCHAT
+    - BUY
+    - PICK_MISSION
+    - SELL
+    - REFRESH_TRADE_LIST
+    - END
+  - COMBAT
+    - DEFAULT_ATTACK
+    - DISENGAGE
+    - DODGE
+    - ENGAGE
+    - PARRY
+    - PROTECTED_SLOT
+    - VALIDATE_MELEE
+  - COMMAND
+  - CONNECTION
+  - DEATH
+    - ASK_RESPAWN
+  - DEBUG
+    - PING
+    - WHERE
+    - WHO
+  - DM_GIFT
+  - DUEL
+  - EXCHANGE
+  - GUILD
+  - HARVEST
+  - ITEM
+  - JOURNAL
+  - OUTPOST
+  - PHRASE
+  - PVP
+  - TEAM
+* GPMS
+* IOS
+* AIS
