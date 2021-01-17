@@ -5,7 +5,8 @@ nel/georges
 
 * sheet：固有定义格式的XML文件，有一个FORM元素按格式存储数据。
   - \<FORM>
-	  - \<STRUCT>
+	  - \<STRUCT name>
+	  	- \<ATOM name value>
 * packed_sheets：一个sheet或多个sheet的全部或部分数据加载在一个容器后，形成一个view。按打包格式然后将这个容器系列化后生成的文件。
   - 所有依赖的sheet文件名
   - 当前容器数据view
