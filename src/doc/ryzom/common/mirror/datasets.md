@@ -1,3 +1,5 @@
+
+### CMirror::init
 server/data_shard/datasets.packed_sheets
 
 ```loadForm("datasets.packed_sheets")``` to map<CSheetId, TDataSetSheet>
@@ -118,3 +120,11 @@ $18 = {DataSetName = "fame", NbProperties = 103, MaxNbRows = 16000,
     12 '\f', 13 '\r', 14 '\016'}}
 
 ```
+### CMirror::doInitMirrorLevel1
+./server/data_shard/mirror_sheets/fame.dataset
+
+./server/data_shard/mirror_sheets/fe_temp.dataset
+
+```CMirroredDataSet::init()``` load TDataSetSheet to CMirroredDataSet and bind CPropertyAllocatorClient
+
+通过```CMirroredDataSet::init()```的参数名来看，CMirroredDataSet只将TDataSetSheet看作一个表的行定义，也就是Properties描述。CPropertyAllocatorClient负责为每个列分配空间，挂载到CDataSetBase对应属性（列）的Value指针。
