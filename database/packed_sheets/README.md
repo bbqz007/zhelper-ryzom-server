@@ -77,3 +77,6 @@ packed_sheets对应一个C++数据结构在一种容器内的一组对象数据�
 
 调用```serial```的帮助方法名为```loadForm```，意为从流串反序列化读取数据，快速。
 
+##
+datasets.packed_sheets是一个特殊的文件，对应于一组CDataSetSheet对象，应用在Mirror服务的DataSetBase，用于定义数据集，一个数据集对应一个数据实体，一个数据实体包含多个属性。一个数据集特殊地可以看作一个二维表，属性是列定义。
+
