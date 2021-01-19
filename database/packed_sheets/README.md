@@ -1,12 +1,13 @@
 [doc license](../../LICENSE)
 
-## OVErVIEW
+## OVERVIEW
 nel/georges
 
 * sheet：固有定义格式的XML文件，有一个FORM元素按格式存储数据。
   - \<FORM>
 	  - \<STRUCT name>
 	  	- \<ATOM name value>
+	  - \<ARRAY name>	
 * packed_sheets：一个sheet或多个sheet的全部或部分数据加载在一个容器后，形成一个view。按打包格式然后将这个容器系列化后生成的文件。
   - 所有依赖的sheet文件名
   - 当前容器数据view
@@ -64,4 +65,15 @@ type = class CStaticSuccessTable {
     uint8 _MinSuccessRoll;
 ```
 上面分别是sheet表设计与运行的代码类。	
+
+##
+packed_sheets对应一个C++数据结构在一种容器内的一组对象数据的流串的序列化，包含这个数据结构的XML定义描述（dfn，typ），包含这个数据结构的XML数据源（form）。
+
+这个数据结构必须实现```serial```使用流串序列化数据到packed_sheets文件，或反序列化从packed_sheets文件数据
+
+这个数据结构必须实现```readGeorges```从XML文件读取更新数据。
+
+调用```readGeorges```的方法通常取名为```readForm```，意为从\<FORM>中读取数据，慢速。
+
+调用```serial```的帮助方法名为```loadForm```，意为从流串反序列化读取数据，快速。
 
