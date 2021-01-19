@@ -26,10 +26,10 @@ packed_sheets文件相当于一个或多个sheet的view，加载时可能通过�
 * UType
 
 地理表单实现类
-* CForm
+* CForm 对应一个包含\<FORM>的XML文件
 * CFormLoader
-* CFormDfn
-* CFormElm
+* CFormDfn 对应一个包含\<DFN>的XML文件
+* CFormElm 对应CForm的一个\<STRUCT>或\<ARRAY>节点。
 * CType
 
 sheet表格式定义 
