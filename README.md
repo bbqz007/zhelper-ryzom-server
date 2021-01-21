@@ -65,9 +65,10 @@ Services Layout
     - [模块管理](src/doc/nel/net/module.md)
     - [服务主循环](src/doc/nel/service/main.md)
 * [**数据库**](database)
-    - MySQL
+    - [MySQL](database/mysql)
     - [Mirror]() 游戏数据镜像服务    
-    - [DataSetSheet]()
+        - [DataSetSheet]()
+        - [DataSet]()
     - [PackedSheet]()
 * **配置文件**
     - [命令](cfg/commands)
@@ -76,4 +77,4 @@ Services Layout
 * [**序列化**](src/doc/serialization)
 * **协议**
     - S2S
-    - C2S
+    - [C2S](network/protocol/c2s)
