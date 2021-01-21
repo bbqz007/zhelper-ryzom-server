@@ -68,8 +68,8 @@ Services Layout
     - [MySQL](database/mysql)
     - [Mirror]() 游戏数据镜像服务    
         - [DataSetSheet]()
-        - [DataSet]()
-    - [PackedSheet]()
+        - [DataSet](src/doc/ryzom/common/mirror/datasets.md)
+    - [PackedSheet](database/packed_sheets)
 * **配置文件**
     - [命令](cfg/commands)
 * **部署**
