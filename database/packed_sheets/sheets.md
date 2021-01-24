@@ -4,7 +4,7 @@ ryzom/common/src/game_share/time_weather_season
   - static_light_cycle.h
   - weather_function_params_sheet_base.h
   - weather_setup_sheet_base.h
-```
+```c++
 /**
  * Class containing the data used to manage day cycles ( read from sheets )
  * \author Nicolas Brigand
@@ -23,7 +23,7 @@ public:
 		float NightHour;
 		float NightToDayHour;
 ```
-```
+```c++
 class CWeatherFunctionParamsSheetBase
 {
 public:
@@ -112,7 +112,138 @@ server_share
 
 ryzom/server/src/server_share/
   - continent_container.h
+```c++
+class CAIAction
+: public IAIAction
+{
+private:
+	NLMISC::CSheetId _SheetId;
+	bool _SelfAction;
+};
+
 ```
+```c++
+class CActionList
+: public NLMISC::CDbgRefCount<CActionList>
+{
+public:
+	NLMISC::CSheetId			_SheetId;
+	std::vector<IAIActionCPtr>	_Actions;
+
+	bool _HasNormalAction;
+	bool _HasSelfAction;
+```
+```c++
+class CCreature
+: public ICreature
+{
+public:
+	CCreature();
+	
+private:
+	NLMISC::CSheetId _SheetId;
+	uint32 _Level;
+	
+	// colors from sheet
+	uint8 _ColorHead;
+	uint8 _ColorArms;
+	uint8 _ColorHands;
+	uint8 _ColorBody;
+	uint8 _ColorLegs;
+	uint8 _ColorFeets;
+	
+	float _Radius;
+	float _Height;
+	float _Width;
+	float _Length;
+	float _BoundingRadius;
+	
+	// the entity is a bot object and cannot be traversed.
+	bool _NotTraversable;
+	
+	// the entity is a fauna, even is used as npc, it keep it's fauna name
+	bool _ForceDisplayCreatureName;
+	
+	float _BonusAggroHungry;
+	float _BonusAggroVeryHungry;
+	
+	float _AssistDist;
+	
+	float _AggroRadiusNotHungry;
+	float _AggroRadiusHungry;
+	float _AggroRadiusHunting;
+	
+	float _AggroReturnDistCheck;
+	float _AggroRadiusD1;
+	float _AggroRadiusD2;
+	float _AggroPrimaryGroupDist;
+	float _AggroPrimaryGroupCoef;
+	float _AggroSecondaryGroupDist;
+	float _AggroSecondaryGroupCoef;
+	float _AggroPropagationRadius;
+	
+	AITYPES::TFaunaType _FaunaType;
+	
+	float _Scale;
+	
+	float _DistToFront;
+	float _DistToBack;
+	float _DistToSide;
+	
+	float _DistModulator;
+	float _TargetModulator;
+	float _ScoreModulator;
+	float _FearModulator;
+	float _LifeLevelModulator;
+	float _CourageModulator;
+	float _GroupCohesionModulator;
+	
+	float _GroupDispersion;
+	
+	uint32 _XPLevel;
+	uint32 _NbPlayers;
+	
+	uint32 _EnergyValue;
+	
+	bool _CanTurn;
+	
+	NLMISC::CDbgPtr<CActionList> _FightConfig[FIGHTCFG_MAX];
+	
+	NLMISC::CSheetId _LeftItem;
+	NLMISC::CSheetId _RightItem;
+	
+	uint32 _MinFightDist;
+	
+	uint32 _FactionIndex;
+	sint32 _FameForGuardAttack;
+	
+	std::string _AssistGroupIndexStr;
+	std::string _AttackGroupIndexStr;
+	std::string _GroupIndexStr;
+	
+	uint32 _GroupPropertiesIndex;
+	
+	/// the creature sheet can specify a multiplier that modulate the dynmaic groupe size
+	uint32 _DynamicGroupCountMultiplier;
+	
+	std::string _BotName;
+	
+	TScriptCompList _ScriptCompList;
+	
+	TScriptCompList _UpdateScriptList;
+	TScriptCompList _DeathScriptList;
+	TScriptCompList _BirthScriptList;
+	
+	// Character Race
+	EGSPD::CPeople::TPeople _Race;
+```
+```c++
+class CRaceStats
+: public IRaceStats
+{
+private:
+	NLMISC::CSheetId _SheetId;
+	std::string _Race;
 ```
 ai_serivece
 
