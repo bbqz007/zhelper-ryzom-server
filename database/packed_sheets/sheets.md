@@ -5,6 +5,41 @@
 * [gpm_service](#gpm_service)
 * [input_output_service](#input_output_service)
 
+```bash
+../../ryzom/server/data_shard/gpms.packed_sheets
+../../ryzom/server/data_shard/continents.packed_sheets
+../../ryzom/server/data_shard/datasets.packed_sheets
+../../ryzom/server/data_shard/ais_action.packed_sheets
+../../ryzom/server/data_shard/ais_fight_config.packed_sheets
+../../ryzom/server/data_shard/ais.packed_sheets
+../../ryzom/server/data_shard/ais_race_stats.packed_sheets
+../../ryzom/server/data_shard/light_cycles.packed_sheets
+../../ryzom/server/data_shard/ios_sheets.packed_sheets
+../../ryzom/server/data_shard/egs_success_chance_tables.packed_sheets
+../../ryzom/server/data_shard/egs_items.packed_sheets
+../../ryzom/server/data_shard/egs_xptables.packed_sheets
+../../ryzom/server/data_shard/egs_action_xp_factor.packed_sheets
+../../ryzom/server/data_shard/egs_death_impact.packed_sheets
+../../ryzom/server/data_shard/egs_creatures.packed_sheets
+../../ryzom/server/data_shard/egs_race_stats.packed_sheets
+../../ryzom/server/data_shard/egs_starting_role.packed_sheets
+../../ryzom/server/data_shard/egs_skill_tree.packed_sheets
+../../ryzom/server/data_shard/egs_aiactions.packed_sheets
+../../ryzom/server/data_shard/egs_weather_setup.packed_sheets
+../../ryzom/server/data_shard/egs_weather_function_params.packed_sheets
+../../ryzom/server/data_shard/egs_world.packed_sheets
+../../ryzom/server/data_shard/egs_continents.packed_sheets
+../../ryzom/server/data_shard/egs_outpost_building.packed_sheets
+../../ryzom/server/data_shard/egs_outpost_squads.packed_sheets
+../../ryzom/server/data_shard/egs_sbricks.packed_sheets
+../../ryzom/server/data_shard/egs_sphrases.packed_sheets
+../../ryzom/server/data_shard/egs_text_emotes.packed_sheets
+../../ryzom/server/data_shard/egs_emot.packed_sheets
+../../ryzom/server/data_shard/egs_encyclo_album.packed_sheets
+../../ryzom/server/data_shard/egs_encyclo_thema.packed_sheets
+
+```
+
 ### game_share
 
 ryzom/common/src/game_share/time_weather_season
