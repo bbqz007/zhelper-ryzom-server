@@ -283,6 +283,16 @@ ryzom/server/src/entities_game_service/egs_sheets/
   - egs_static_outpost.h
   - egs_static_guild_option.h
   - egs_static_game_sheet.h
+  	- CStaticGameBrick
+	- CStaticXpStagesTable
+	- CStaticStagesTypeSkillTable
+	- CStaticPacts
+	- CStaticCreatures
+	- CStaticCharacters
+	- CStaticLootSet
+	- CStaticRaceStats
+	- CStaticRole
+  	- CStaticSkillsTree
   - egs_static_game_item.h
   - egs_static_emot.h
   - egs_static_deposit.h
