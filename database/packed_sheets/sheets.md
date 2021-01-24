@@ -277,6 +277,8 @@ private:
 
 ryzom/server/src/entities_game_service/egs_sheets/
   - egs_static_world.h
+  	- CStaticWorld
+	- CStaticContinent
   - egs_static_text_emotes.h
   - egs_static_success_table.h
   - egs_static_rolemaster_phrase.h
