@@ -1,5 +1,6 @@
 * [game_share](#game_share)
 * [server_share](#server_share)
+* [ai_serivece](#ai_serivece)
 * [entities_game_service](#entities_game_service)
 * [gpm_service](#gpm_service)
 * [input_output_service](#input_output_service)
@@ -132,7 +133,7 @@ ryzom/server/src/server_share/
 		std::vector<std::string>	ListIG;
 ```
 
-ai_serivece
+### ai_serivece
 
 ryzom/server/src/ai_service/
   - sheets.h
