@@ -1,4 +1,10 @@
-game_share
+* [game_share](#game_share)
+* [server_share)(#server_share)
+* [entities_game_service](#entities_game_service)
+* [gpm_service](#gpm_service)
+* [input_output_service](#input_output_service)
+
+### game_share
 
 ryzom/common/src/game_share/time_weather_season
   - static_light_cycle.h
@@ -108,10 +114,16 @@ public:
 	std::string   LocalizedName;
 
 ```
-server_share
+### server_share
 
 ryzom/server/src/server_share/
   - continent_container.h
+
+ai_serivece
+
+ryzom/server/src/ai_service/
+  - sheets.h
+  
 ```c++
 class CAIAction
 : public IAIAction
@@ -245,14 +257,9 @@ private:
 	NLMISC::CSheetId _SheetId;
 	std::string _Race;
 ```
-ai_serivece
 
-ryzom/server/src/ai_service/
-  - sheets.h
-  
-```
-```
-entities_game_service
+[top](#)
+### entities_game_service
 
 ryzom/server/src/entities_game_service/egs_sheets/
   - egs_static_world.h
@@ -269,15 +276,21 @@ ryzom/server/src/entities_game_service/egs_sheets/
   - egs_static_ai_action.h
 ```
 ```
-gpm_service
+
+[top](#)
+### gpm_service
 
 ryzom/server/src/gpm_service/
   - sheets.h
 ```
 ```
-input_output_service
+
+[top](#)
+### input_output_service
 
 ryzom/server/src/input_output_service/
   - string_manager.h
 ```
 ```
+
+[top](#)
