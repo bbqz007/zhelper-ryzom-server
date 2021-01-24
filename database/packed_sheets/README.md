@@ -80,3 +80,5 @@ packed_sheets对应一个C++数据结构在一种容器内的一组对象数据�
 ##
 datasets.packed_sheets是一个特殊的文件，对应于一组CDataSetSheet对象，应用在Mirror服务的DataSetBase，用于定义数据集，一个数据集对应一个数据实体，一个数据实体包含多个属性。一个数据集特殊地可以看作一个二维表，属性是列定义。
 
+## FILES
+[sheets and structures](sheets.md)
