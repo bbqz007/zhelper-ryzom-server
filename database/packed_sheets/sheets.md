@@ -1,5 +1,5 @@
 * [game_share](#game_share)
-* [server_share)(#server_share)
+* [server_share](#server_share)
 * [entities_game_service](#entities_game_service)
 * [gpm_service](#gpm_service)
 * [input_output_service](#input_output_service)
@@ -118,6 +118,19 @@ public:
 
 ryzom/server/src/server_share/
   - continent_container.h
+  
+```c++
+	class CContinentContainer::CSheet
+	{
+	public:
+		CSheet() {}
+
+		std::string					Name;
+		std::string					PacsRBank;
+		std::string					PacsGR;
+		std::string					LandscapeIG;
+		std::vector<std::string>	ListIG;
+```
 
 ai_serivece
 
@@ -282,7 +295,26 @@ ryzom/server/src/entities_game_service/egs_sheets/
 
 ryzom/server/src/gpm_service/
   - sheets.h
-```
+```c++
+/**
+ * Singleton containing database on information for actors
+ * \author Sadge
+ * \author Nevrax France
+ * \date 2002
+ */
+class CSheets
+{
+public:
+	class CSheet
+	{
+	public:
+		float	WalkSpeed;
+		float	RunSpeed;
+		float	Radius;				// pacs primitive's radius
+		float	Height;				// pacs primitive's height
+		float	BoundingRadius;		// fighting radius
+		float	Scale;				// entity scale
+
 ```
 
 [top](#)
@@ -290,7 +322,24 @@ ryzom/server/src/gpm_service/
 
 ryzom/server/src/input_output_service/
   - string_manager.h
-```
+```c++
+	/** Container for data extracted from entity sheet.
+	 *	This is used to store 'static' information like gender.
+	 */
+	struct CStringManager::TSheetInfo
+	{
+		/// The name of the entity model.
+		std::string			SheetName;
+		/// The race of the creature.
+		std::string			Race;
+		/// The gender of this entity model.
+		GSGENDER::EGender	Gender;
+		/// The display name
+//		std::string			DisplayName;
+		/// Creature profile (aka career)
+		std::string			Profile;
+		/// Creature chat profile
+		std::string			ChatProfile;
 ```
 
 [top](#)
