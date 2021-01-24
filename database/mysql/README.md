@@ -1,7 +1,7 @@
 [nel](nel.md) 游戏帐号，登陆
   - domain
   - permission
-  - ahard
+  - shard
   - user
 
 [nel_tool](nel_tool.md) 后台管理接口地址相关
