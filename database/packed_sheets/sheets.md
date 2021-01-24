@@ -5,6 +5,107 @@ ryzom/common/src/game_share/time_weather_season
   - weather_function_params_sheet_base.h
   - weather_setup_sheet_base.h
 ```
+/**
+ * Class containing the data used to manage day cycles ( read from sheets )
+ * \author Nicolas Brigand
+ * \author Nevrax France
+ * \date 2003
+ */
+class CStaticLightCycle
+{
+public:
+
+	struct SLightCycle
+	{
+		float DayHour;
+		float DayToDuskHour;
+		float DuskToNightHour;
+		float NightHour;
+		float NightToDayHour;
+```
+```
+class CWeatherFunctionParamsSheetBase
+{
+public:
+	uint32  DayLength;   // length of day, in hours
+	uint32  CycleLength; // length of a cycle, in hours
+	//
+	float   MinThunderPeriod; // Min thunder period, in s.
+	float   ThunderLength; // Length of a thunder strike, in s.
+	//
+	float   CloudWindSpeedFactor;
+	float   CloudMinSpeed;
+```
+```c++
+/**
+ * Class to manage weather setup sheets
+ * \author Nicolas Vizerie
+ * \author Nevrax France
+ * \date 2003
+ */
+class CWeatherSetupSheetBase
+{
+public:
+	CWeatherStateSheet WeatherState;
+	CCloudStateSheet   CloudState;
+	NLMISC::TStringId  SetupName;
+  
+// state of weather, including clouds
+class CCloudStateSheet
+{
+public:
+	NLMISC::CRGBA AmbientDay;
+	NLMISC::CRGBA DiffuseDay;
+	NLMISC::CRGBA AmbientNight;
+	NLMISC::CRGBA DiffuseNight;
+	NLMISC::CRGBA AmbientDusk;
+	NLMISC::CRGBA DiffuseDusk;
+	uint32		  NumClouds;
+	float		  DiffusionSpeed;
+
+// state of weather, not including clouds
+class CWeatherStateSheet
+{
+public:
+	// Best aprox setup name when blended
+	std::string BestSetupName;
+	struct CFXInfos
+	{
+		std::string Name;
+		float		Ratio;
+
+		CFXInfos() { Ratio = 0.0f; }
+
+		void		serial(class NLMISC::IStream &f) throw(NLMISC::EStream)
+		{
+			f.serial(Name, Ratio);
+		}
+	};
+	// Fog (main & canopy)
+	float		  FogRatio;
+	NLMISC::CRGBA FogColorDay;
+	NLMISC::CRGBA FogColorDusk;
+	NLMISC::CRGBA FogColorNight;
+	float         FogNear[NumFogType];
+	float		  FogFar[NumFogType];
+	float		  FogGradientFactor; // factor for the fog gradient
+	// Lighting
+	float		  Lighting;
+	/** Bg read from the sheet
+ 	  */
+	std::string   DayBackground;
+	std::string   DuskBackground;
+	std::string   NightBackground;
+
+	// Wind
+	float		  WindIntensity;
+	// FX
+	std::vector<CFXInfos> FXInfos;
+	// Thunder
+	float		  ThunderIntensity;
+	NLMISC::CRGBA ThunderColor;
+
+	std::string   LocalizedName;
 
 ```
 server_share
