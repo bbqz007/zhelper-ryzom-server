@@ -40,6 +40,8 @@ tracker与delta可以参看```CMirrorService::processReceivedDelta()```。
 
 **client services** 所有连接到**MS**的服务，并使用CMirror，向**MS**声明实体属性评阅内容等。
 
+**forward** **MS**提供消息转发服务，但必须受TICK制约，换句话来说通过**MS**排队有序转发并且不是实时，而是延后到下一个TICK。
+
 ## AUTOMATON
 CMirrorService有两个源代码，mirror_service.cpp与ms_automaton.cpp。
 ```c++
