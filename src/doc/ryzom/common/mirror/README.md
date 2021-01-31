@@ -22,17 +22,19 @@ CDataSetSheet是从datasets文件加载的数据集（或称作表）的静态�
 
 
 ## CONCEPTS
-DataSet 数据集或表， 一个CSheetId对应一个数据集描述。
+**DataSet** 数据集或表， 一个CSheetId对应一个数据集描述。
 
-Entity与Row 行描述，行数据。
+**Entity与Row** 行描述，行数据。
 
-Property 列属性，一个单元数据。
+**Property** 列属性，一个单元数据。
 
-tracker与subscriber 一个意思，订阅的内容可以是Entity（bind，sync，adding，removing），也可以是Property （change）。
+**tracker与subscriber** 一个意思，订阅的内容可以是Entity（bind，sync，adding，removing），也可以是Property （change）。
 
-delta 一个订阅内容对应的消息，事件发生了。CChangeDeltaMS
+**delta** 一个订阅内容对应的消息，事件发生了。CChangeDeltaMS
 
 tracker与delta可以参看```CMirrorService::processReceivedDelta()```。
+
+**RANGE_MANAGER_SERVICE，master TICK** 依赖同一物理机的本地TICKS服务，并且只能有一个，由TICK驱动服务修理循环。
 
 ## AUTOMATON
 CMirrorService有两个源代码，mirror_service.cpp与ms_automaton.cpp。
