@@ -96,10 +96,10 @@ CMirrorService有两个源代码，mirror_service.cpp与ms_automaton.cpp。
  */
 ```
 流程
-1 本地MS收到来自tick服务的TICK，然后向所有客户端发送TICK，在收集完客户端forward的消息以及RemoteMS的delta同步消息后，等待所有客户端发送TOCK回来。
+- 1 本地MS收到来自tick服务的TICK，然后向所有客户端发送TICK，在收集完客户端forward的消息以及RemoteMS的delta同步消息后，等待所有客户端发送TOCK回来。
 
-2 收到所有TOCK后，接下来才将本地的delta同步消息向RemoteMS发送出去。
+- 2 收到所有TOCK后，接下来才将本地的delta同步消息向RemoteMS发送出去。
 
-3 然后再向tick服务回应TOCK。
+- 3 然后再向tick服务回应TOCK。
 
-4 最后才处理来自RemoteMS的delta同步，再向所有订阅的客户端发送通知。
+- 4 最后才处理来自RemoteMS的delta同步，再向所有订阅的客户端发送通知。
