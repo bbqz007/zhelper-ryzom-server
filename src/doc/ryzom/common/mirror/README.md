@@ -34,7 +34,11 @@ CDataSetSheet是从datasets文件加载的数据集（或称作表）的静态�
 
 tracker与delta可以参看```CMirrorService::processReceivedDelta()```。
 
-**RANGE_MANAGER_SERVICE，master TICK** 依赖同一物理机的本地TICKS服务，并且只能有一个，由TICK驱动服务修理循环。
+**RANGE_MANAGER_SERVICE，master TICK** 依赖同一物理机的本地TICKS服务，并且只能有一个，由TICK驱动服务处理循环，并驱动本地所有镜像服务客户端进行TICK更新回调。
+
+**RemoteMS** 位于不同物理机器的**MS**。
+
+**client services** 所有连接到**MS**的服务，并使用CMirror，向**MS**声明实体属性评阅内容等。
 
 ## AUTOMATON
 CMirrorService有两个源代码，mirror_service.cpp与ms_automaton.cpp。
